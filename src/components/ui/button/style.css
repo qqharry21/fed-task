@@ -1,0 +1,83 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+.btn-wide {
+  width: 100%;
+}
+
+.btn.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1rem 0.75rem;
+  border-radius: var(--border-radius);
+  font-weight: 400;
+  font-size: 13px;
+  border: 1px solid var(--primary);
+}
+
+.btn.btn-primary:hover {
+  box-shadow: 0px 6px 15px 0px var(--primary-shadow);
+}
+
+.btn.btn-outline {
+  background-color: transparent;
+  padding: 1rem 0.75rem;
+  border-radius: var(--border-radius);
+  font-weight: 400;
+  font-size: 13px;
+  border: 1px solid var(--primary);
+}
+
+.btn.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn.btn-link {
+  padding: 0;
+  color: var(--dark);
+  background-color: transparent;
+  border: none;
+}
+
+.btn.btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.btn.btn-link:focus {
+  outline: none;
+}
+
+.btn.btn-link:hover::after,
+.btn.btn-link:focus::after {
+  opacity: 1;
+}
+
+.btn-social {
+  width: 100%;
+  gap: 0.75rem;
+  font-size: 13px;
+}
+
+.btn-return svg {
+  margin-right: 0.5rem;
+}
