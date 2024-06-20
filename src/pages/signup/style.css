@@ -1,0 +1,24 @@
+.signup-wrapper {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  max-width: 610px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-header {
+  width: 100%;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+@media (max-width: 418px) {
+  .signup-wrapper {
+    padding: 1.5rem 0.5rem;
+  }
+}
