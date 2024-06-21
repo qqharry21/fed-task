@@ -3,10 +3,13 @@
   --white: #ffffff;
   --background: #f1f5ff;
   --primary: #3c71ff;
-  --primary-shadow: #3c71ff66;
   --gray: #757575;
   --green: #4ae7a5;
+  --destructive: #d71920;
+  --destructive-background: #f5c4c6;
   --border-radius: 4px;
+
+  --primary-shadow: 0px 6px 15px 0px #3c71ff66;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -48,4 +51,31 @@ button,
 textarea {
   font-size: inherit;
   line-height: inherit;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: var(--primary);
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+}
+
+a:hover::after {
+  opacity: 1;
+}
+
+a:focus {
+  outline: none;
 }
