@@ -1,0 +1,52 @@
+.form-group {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.form-input-wrapper {
+  position: relative;
+  border-radius: var(--border-radius);
+  background-color: var(--background);
+  cursor: text;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.form-input-wrapper .input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  padding: 22px 0.75rem 10px;
+}
+
+.form-input-wrapper .input[aria-invalid='true'] {
+  border: 1px solid var(--danger);
+}
+
+.form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateY(16px) translateX(12px);
+  max-width: calc(100% - 1.5rem);
+  transition:
+    font-size 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.form-input-wrapper:focus-within ~ .form-label,
+.form-input-wrapper--active ~ .form-label {
+  font-size: 10px;
+  transform: translateY(8px) translateX(12px);
+  transform-origin: left top;
+}
