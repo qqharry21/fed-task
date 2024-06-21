@@ -1,0 +1,7 @@
+.input {
+  font-weight: 400;
+}
+
+.input:focus {
+  outline: none;
+}
