@@ -6,7 +6,7 @@ import './style.css';
 
 export const Input = React.forwardRef<
   HTMLInputElement,
-  React.InputHTMLAttributes<HTMLInputElement>
+  React.InputHTMLAttributes<HTMLInputElement> & WithClassName
 >(({ className, ...props }, ref) => {
   return (
     <input
@@ -16,3 +16,5 @@ export const Input = React.forwardRef<
     />
   );
 });
+
+Input.displayName = 'Input';

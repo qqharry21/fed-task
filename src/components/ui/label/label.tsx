@@ -6,7 +6,7 @@ import './style.css';
 
 export const Label = React.forwardRef<
   HTMLLabelElement,
-  React.LabelHTMLAttributes<HTMLLabelElement>
+  React.LabelHTMLAttributes<HTMLLabelElement> & WithClassName
 >(({ className, ...props }, ref) => {
   return (
     <label
@@ -16,3 +16,5 @@ export const Label = React.forwardRef<
     />
   );
 });
+
+Label.displayName = 'Label';

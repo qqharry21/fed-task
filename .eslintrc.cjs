@@ -3,7 +3,9 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
@@ -12,7 +14,7 @@ module.exports = {
   plugins: ['simple-import-sort', 'import', 'react-refresh'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'simple-import-sort/imports': [
       'warn',
       {
@@ -37,5 +39,16 @@ module.exports = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
+  },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
