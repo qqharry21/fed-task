@@ -1,0 +1,46 @@
+.password-control .form-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding-right: 0.75rem;
+}
+
+.password-control .password-visibility-control {
+  transition: fill 0.1s ease;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.password-control .input[type='password'] ~ .password-visibility-control {
+  fill: var(--light-gray);
+}
+
+.password-control .input[type='text'] ~ .password-visibility-control {
+  fill: var(--primary);
+}
+
+.password-rule-group {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 14px;
+  width: 100%;
+}
+
+.password-rule {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 10px;
+}
+
+.password-rule::before {
+  content: ' ';
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5.5" cy="5.5" r="5.5" fill="%23ababab"/><path d="M3 6.18182L5.08333 8L8 4" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  width: 11px;
+  height: 11px;
+}
+
+.password-rule.password-rule--valid::before {
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5.5" cy="5.5" r="5.5" fill="%234AE7A5"/><path d="M3 6.18182L5.08333 8L8 4" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}

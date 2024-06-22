@@ -3,14 +3,22 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { InputField } from '../form/input-field/input-field';
-import { PasswordInputField } from '../form/pasword-input-field/password-input-field';
+import { PasswordInputField } from '../form/password-input-field/password-input-field';
 import { SocialButton } from '../social-button';
 import { Button } from '../ui/button';
 import { Form } from '../ui/form';
 
-import { signupSchema } from './schema';
-
 import './style.css';
+
+const signupSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
+  email: z.string().email().min(1),
+  password: z
+    .string()
+    .min(8, 'Password must be at least 8 characters long')
+    .regex(/\d/, 'Password must contain at least one number'),
+});
 
 type SignupFormValues = z.infer<typeof signupSchema>;
 
@@ -25,8 +33,6 @@ export const SignupForm = () => {
       password: '',
     },
   });
-
-  console.log('🚨 - form', form.formState.errors);
 
   const onSubmit = async (data: SignupFormValues) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
