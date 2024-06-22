@@ -8,11 +8,9 @@
 .signup-content {
   display: grid;
   gap: 1rem;
-  width: 100%;
 }
 
 .signup-form .title-wrapper {
-  width: 100%;
   text-align: left;
 }
 
@@ -53,7 +51,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem 1.25rem;
-  width: 100%;
 }
 
 .signup-input-fields .email-control,
