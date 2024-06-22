@@ -8,21 +8,14 @@ interface CheckboxProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
-  ({ checked: checkedProp, onCheckboxChange, ...props }, ref) => {
-    const [checked, setChecked] = React.useState(Boolean(checkedProp));
-
-    const onClick = () => {
-      setChecked(!checked);
-      onCheckboxChange?.(!checked);
-    };
-
+  ({ checked, onCheckboxChange, ...props }, ref) => {
     return (
       <button
         type='button'
         role='checkbox'
         aria-checked={checked}
         className='checkbox-field'
-        onClick={onClick}
+        onClick={() => onCheckboxChange?.(!checked)}
         ref={ref}
         {...props}
       >
