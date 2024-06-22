@@ -2,6 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { CheckboxField } from '../form/checkbox-field';
 import { InputField } from '../form/input-field/input-field';
 import { PasswordInputField } from '../form/password-input-field/password-input-field';
 import { SocialButton } from '../social-button';
@@ -18,6 +19,7 @@ const signupSchema = z.object({
     .string()
     .min(8, 'Password must be at least 8 characters long')
     .regex(/\d/, 'Password must contain at least one number'),
+  acceptTerms: z.boolean(),
 });
 
 type SignupFormValues = z.infer<typeof signupSchema>;
@@ -31,6 +33,7 @@ export const SignupForm = () => {
       lastName: '',
       email: '',
       password: '',
+      acceptTerms: false,
     },
   });
 
@@ -80,14 +83,20 @@ export const SignupForm = () => {
           />
         </div>
         <div className='signup-footer'>
+          <CheckboxField
+            name='acceptTerms'
+            control={form.control}
+            className='accept-terms-control'
+            label='By creating account, you agree to accept our Privacy Policy, Terms of Service and Notification settings.'
+          />
           <Button
             type='submit'
             className='btn-wide'
           >
             Create an Free Account!
           </Button>
-          <p>
-            Already have an account? <a href='/'>Login</a>
+          <p className='account-text'>
+            Already have an account? <a href='/'>Log in</a>
           </p>
         </div>
       </form>

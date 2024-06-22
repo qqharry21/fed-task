@@ -66,3 +66,7 @@
   width: 100%;
   gap: 1rem;
 }
+
+.signup-footer .account-text a {
+  font-weight: 700;
+}
