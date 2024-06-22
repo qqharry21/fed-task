@@ -1,0 +1,16 @@
+.form-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-checkbox-group .checkbox-field {
+  flex-shrink: 0;
+}
+
+.form-checkbox-group .checkbox-field-label {
+  font-size: 13px;
+  text-align: left;
+  color: var(--light-gray);
+  user-select: none;
+}
