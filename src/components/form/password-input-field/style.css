@@ -1,4 +1,4 @@
-.password-control .form-input-wrapper {
+.password-control .input-field-wrapper {
   display: flex;
   align-items: center;
   padding-right: 0.75rem;
@@ -10,11 +10,11 @@
   pointer-events: auto;
 }
 
-.password-control .input[type='password'] ~ .password-visibility-control {
+.password-control .input-field[type='password'] ~ .password-visibility-control {
   fill: var(--light-gray);
 }
 
-.password-control .input[type='text'] ~ .password-visibility-control {
+.password-control .input-field[type='text'] ~ .password-visibility-control {
   fill: var(--primary);
 }
 

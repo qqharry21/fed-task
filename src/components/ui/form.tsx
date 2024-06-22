@@ -4,8 +4,6 @@ import { Controller, FormProvider, useFormContext } from 'react-hook-form';
 
 import { Label } from '@/components/ui/label';
 
-import { cn } from '@/lib/utils';
-
 const Form = FormProvider;
 
 type FormFieldContextValue<
@@ -64,7 +62,7 @@ const FormItem = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>)
   return (
     <FormItemContext.Provider value={{ id }}>
       <div
-        className={cn('form-group', className)}
+        className={className}
         {...props}
       />
     </FormItemContext.Provider>
@@ -81,7 +79,7 @@ const FormLabel = ({
 
   return (
     <Label
-      className={cn('form-label', className)}
+      className={className}
       htmlFor={formItemId}
       {...props}
     >

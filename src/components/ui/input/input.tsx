@@ -11,7 +11,7 @@ export const Input = React.forwardRef<
   return (
     <input
       ref={ref}
-      className={cn('input', className)}
+      className={cn('input-field', className)}
       {...props}
     />
   );

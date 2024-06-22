@@ -30,7 +30,7 @@ export const CheckboxField = <
       name={name}
       control={control}
       render={({ field }) => (
-        <FormItem className={cn('form-checkbox-group', className)}>
+        <FormItem className={cn('checkbox-field-group', className)}>
           <FormControl>
             <Checkbox
               {...field}

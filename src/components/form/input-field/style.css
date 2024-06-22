@@ -1,4 +1,4 @@
-.form-group {
+.input-field-group {
   position: relative;
   display: inline-flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   min-width: 0;
 }
 
-.form-input-wrapper {
+.input-field-wrapper {
   position: relative;
   border-radius: var(--border-radius);
   background-color: var(--background);
@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-.form-input-wrapper .input {
+.input-field-wrapper .input-field {
   background-color: transparent;
   border: none;
   width: 100%;
@@ -24,11 +24,11 @@
   cursor: text;
 }
 
-.form-input-wrapper[aria-invalid='true'] {
+.input-field-wrapper[aria-invalid='true'] {
   border: 2px solid var(--destructive);
 }
 
-.form-label {
+.input-field-label {
   position: absolute;
   top: 50%;
   left: 0;
@@ -45,8 +45,8 @@
     top 0.2s ease;
 }
 
-.form-input-wrapper:focus-within:has(.input:focus) .form-label,
-.form-input-wrapper--active .form-label {
+.input-field-wrapper:focus-within:has(.input-field:focus) .input-field-label,
+.input-field-wrapper--active .input-field-label {
   font-size: 10px;
   top: 0;
   transform: translateY(8px) translateX(12px);

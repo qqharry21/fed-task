@@ -34,11 +34,11 @@ export const InputField = <
       name={name}
       control={control}
       render={({ field }) => (
-        <FormItem className={className}>
+        <FormItem className={cn('input-field-group', className)}>
           <FormControl>
             <div
-              className={cn('form-input-wrapper', {
-                'form-input-wrapper--active': Boolean(field.value),
+              className={cn('input-field-wrapper', {
+                'input-field-wrapper--active': Boolean(field.value),
               })}
             >
               <Input
@@ -46,7 +46,7 @@ export const InputField = <
                 className='form-input'
                 {...field}
               />
-              <FormLabel>{label}</FormLabel>
+              <FormLabel className='input-field-label'>{label}</FormLabel>
               {extraElement}
             </div>
           </FormControl>
