@@ -6,6 +6,7 @@ import { CheckboxField } from '../form/checkbox-field';
 import { InputField } from '../form/input-field/input-field';
 import { PasswordInputField } from '../form/password-input-field/password-input-field';
 import { SocialButton } from '../social-button';
+import { Alert } from '../ui/alert';
 import { Button } from '../ui/button';
 import { Form } from '../ui/form';
 
@@ -19,14 +20,15 @@ const signupSchema = z.object({
     .string()
     .min(8, 'Password must be at least 8 characters long')
     .regex(/\d/, 'Password must contain at least one number'),
-  acceptTerms: z.boolean(),
+  acceptTerms: z.boolean().refine((value) => value, {
+    message: 'You must accept the terms and conditions',
+  }),
 });
 
 type SignupFormValues = z.infer<typeof signupSchema>;
 
 export const SignupForm = () => {
   const form = useForm<SignupFormValues>({
-    mode: 'all',
     resolver: zodResolver(signupSchema),
     defaultValues: {
       firstName: '',
@@ -39,7 +41,8 @@ export const SignupForm = () => {
 
   const onSubmit = async (data: SignupFormValues) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log('🚨 - data', data);
+    window.alert(JSON.stringify(data, null, 2));
+    form.reset();
   };
   return (
     <Form {...form}>
@@ -53,6 +56,9 @@ export const SignupForm = () => {
             <div className='subtitle'>Start from free</div>
             <h1 className='title'>Create an account</h1>
           </div>
+          {Object.keys(form.formState.errors).length > 0 && (
+            <Alert>Please complete all the required fields to proceed.</Alert>
+          )}
           <div className='social-group'>
             <SocialButton type='google' />
             <SocialButton type='facebook' />
