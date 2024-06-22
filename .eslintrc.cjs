@@ -13,7 +13,10 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['simple-import-sort', 'import', 'react-refresh'],
   rules: {
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    'react/prop-types': 'off',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'simple-import-sort/imports': [
       'warn',

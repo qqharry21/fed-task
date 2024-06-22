@@ -2,11 +2,13 @@
   display: grid;
   gap: 25px;
   max-width: 400px;
+  width: 100%;
 }
 
 .signup-content {
   display: grid;
   gap: 1rem;
+  width: 100%;
 }
 
 .signup-form .title-wrapper {
@@ -26,6 +28,7 @@
 .signup-form .social-group {
   display: grid;
   gap: 1.25rem;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -44,4 +47,25 @@
   height: 1px;
   margin-left: 9px;
   background-color: var(--dark);
+}
+
+.signup-input-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.25rem;
+  width: 100%;
+}
+
+.signup-input-fields .email-control,
+.signup-input-fields .password-control {
+  grid-column: 1 / -1;
+}
+
+.signup-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
 }
