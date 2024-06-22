@@ -11,7 +11,6 @@
   position: relative;
   border-radius: var(--border-radius);
   background-color: var(--background);
-  cursor: text;
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -22,10 +21,11 @@
   border: none;
   width: 100%;
   padding: 22px 0.75rem 10px;
+  cursor: text;
 }
 
-.form-input-wrapper .input[aria-invalid='true'] {
-  border: 1px solid var(--danger);
+.form-input-wrapper[aria-invalid='true'] {
+  border: 2px solid var(--destructive);
 }
 
 .form-label {
@@ -44,7 +44,7 @@
     transform 0.2s ease-in-out;
 }
 
-.form-input-wrapper:focus-within ~ .form-label,
+.form-input-wrapper:focus-within:has(.input:focus) ~ .form-label,
 .form-input-wrapper--active ~ .form-label {
   font-size: 10px;
   transform: translateY(8px) translateX(12px);
