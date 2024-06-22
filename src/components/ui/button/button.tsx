@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import './style.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'outline' | 'link';
+  variant?: 'primary' | 'outline' | 'link' | 'ghost';
   icon?: React.ReactNode;
 }
 
