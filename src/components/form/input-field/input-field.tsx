@@ -46,10 +46,10 @@ export const InputField = <
                 className='form-input'
                 {...field}
               />
+              <FormLabel>{label}</FormLabel>
               {extraElement}
             </div>
           </FormControl>
-          <FormLabel>{label}</FormLabel>
           {children}
         </FormItem>
       )}

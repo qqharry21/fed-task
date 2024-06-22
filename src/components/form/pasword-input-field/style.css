@@ -10,7 +10,7 @@
   pointer-events: auto;
 }
 
-.password-control .input[type='password'] + .password-toggle-control {
+.password-control .input[type='password'] ~ .password-toggle-control {
   fill: var(--light-gray);
 }
 

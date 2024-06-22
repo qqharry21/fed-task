@@ -30,23 +30,24 @@
 
 .form-label {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   z-index: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   pointer-events: none;
-  transform: translateY(16px) translateX(12px);
+  transform: translateY(-50%) translateX(12px);
   max-width: calc(100% - 1.5rem);
   transition:
-    font-size 0.2s ease-in-out,
-    transform 0.2s ease-in-out;
+    font-size 0.2s ease,
+    transform 0.2s ease,
+    top 0.2s ease;
 }
 
-.form-input-wrapper:focus-within:has(.input:focus) ~ .form-label,
-.form-input-wrapper--active ~ .form-label {
+.form-input-wrapper:focus-within:has(.input:focus) .form-label,
+.form-input-wrapper--active .form-label {
   font-size: 10px;
+  top: 0;
   transform: translateY(8px) translateX(12px);
-  transform-origin: left top;
 }
