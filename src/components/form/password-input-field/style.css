@@ -18,6 +18,10 @@
   fill: var(--primary);
 }
 
+.password-control:not(:focus-within) .password-rule-group[data-valid='true'] {
+  display: none;
+}
+
 .password-rule-group {
   overflow: hidden;
   display: flex;
