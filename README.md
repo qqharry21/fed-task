@@ -53,7 +53,7 @@ After testing, you can build the project for production by running:
 npm run build
 ```
 
-### CI/CD
+## CI/CD
 
 I used **Github Action** for CI/CD. The workflow is defined in `.github/workflows/deploy.yml`. It will build the project and deploy it to Github Pages.
 
